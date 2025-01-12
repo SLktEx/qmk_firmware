@@ -3,6 +3,10 @@
 
 #include QMK_KEYBOARD_H
 #include "lib/add_keycodes.h"
+#include "lib/add_shingeta.h"
+
+combo_t key_combos[] = {
+};
 
 // レイヤー名
 enum layer_number {

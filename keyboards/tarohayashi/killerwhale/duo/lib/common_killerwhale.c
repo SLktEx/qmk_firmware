@@ -8,6 +8,7 @@
 #include "joystick.h"
 #include "lib/add_keycodes.h"
 #include "lib/add_oled.h"
+#include "lib/add_shingeta.h"
 
 joystick_config_t joystick_axes[JOYSTICK_AXIS_COUNT] = {
     JOYSTICK_AXIS_VIRTUAL,
@@ -82,7 +83,7 @@ bool is_mouse_record_kb(uint16_t keycode, keyrecord_t* record) {
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
     // 追加キーコードタスク
     process_record_addedkeycodes(keycode, record);
-
+    process_record_shingetakeycodes(keycode, record);
     // D-Padの同時押しを防ぐ
     keypos_t key = record->event.key;
     if(key.col == 6 && dpad_exclusion){
