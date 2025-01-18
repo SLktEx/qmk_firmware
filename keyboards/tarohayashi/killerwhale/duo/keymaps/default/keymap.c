@@ -11,20 +11,22 @@ combo_t key_combos[] = {
 // レイヤー名
 enum layer_number {
     BASE = 0,
+    BASE_QWERTY,
     ONOFF, OFFON, ONON,                       // トグルスイッチで変更するレイヤー
     LOWER, UPPER, UTIL,                       // 長押しで変更するレイヤー
-    MOUSE, BALL_SETTINGS, LIGHT_SETTINGS // 自動マウスレイヤー切り替えや設定用のレイヤー
+    MOUSE = 7, BALL_SETTINGS, LIGHT_SETTINGS // 自動マウスレイヤー切り替えや設定用のレイヤー
 };
 
 // キーマップの設定
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  // MTGAP Thumbshift
   [BASE] = LAYOUT(
         // 左手
         // 天面スイッチ
-        KC_ESC,  KC_1,         KC_2,            KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
-        KC_TAB,  KC_Q,         KC_W,            KC_E, KC_R, KC_T,
-        CMD_CTL, KC_A,         LT(MOUSE, KC_S), KC_D, KC_F, KC_G,
-                 LSFT_T(KC_Z), KC_X,            KC_C, KC_V, KC_B,
+        KC_ESC,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
+        KC_TAB,  KC_Y,  KC_P, KC_O,  KC_U,  KC_J,
+        CMD_CTL, KC_I,  KC_N, KC_E,  KC_A,  KC_SCLN,
+                 KC_Q,  KC_Z, KC_COMM, KC_DOT, KC_SLSH,
                                MOD_SCRL,
         // 側面スイッチ
         KC_LNG2, KC_SPC,
