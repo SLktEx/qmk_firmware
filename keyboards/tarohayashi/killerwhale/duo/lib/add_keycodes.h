@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include "quantum.h"
+#include "lib/add_shingeta.h"
 
 // 追加するキーコード
 enum TH_keycodes{
-    CMD_CTL = QK_KB_0,
+    CMD_CTL = SG_LAST,
     UNDO,
     REDO,
     COPY,
