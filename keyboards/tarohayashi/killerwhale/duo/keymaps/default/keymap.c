@@ -11,9 +11,9 @@ combo_t key_combos[] = {
 // レイヤー名
 enum layer_number {
     BASE = 0,
-    BASE_QWERTY,
+    UTIL,
     ONOFF, OFFON,                       // トグルスイッチで変更するレイヤー
-    LOWER, UPPER, UTIL,                       // 長押しで変更するレイヤー
+    LOWER, UPPER, BASE_QWERTY,                       // 長押しで変更するレイヤー
     MOUSE, BALL_SETTINGS, LIGHT_SETTINGS // 自動マウスレイヤー切り替えや設定用のレイヤー
 };
 
