@@ -192,3 +192,50 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
         ENCODER_CCW_CW(UG_HUEU, UG_HUED),
     },
 };
+
+
+void layer_on_base_qwerty_when_modifier(keyrecord_t *record) {
+
+    if (record->event.pressed) {
+        layer_on(BASE_QWERTY);
+    } else {
+        layer_off(BASE_QWERTY);
+    }
+
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record){
+
+    switch (keycode) {
+        case KC_LEFT_CTRL:
+            layer_on_base_qwerty_when_modifier(record);
+            break;
+        case KC_LEFT_ALT:
+            layer_on_base_qwerty_when_modifier(record);
+            break;
+        case KC_LEFT_GUI:
+            layer_on_base_qwerty_when_modifier(record);
+            break;
+        case KC_LEFT_SHIFT:
+            if ( BASE != get_highest_layer(layer_state)) {
+                layer_on_base_qwerty_when_modifier(record);
+            }
+            break;
+        case KC_RIGHT_CTRL:
+            layer_on_base_qwerty_when_modifier(record);
+            break;
+        case KC_RIGHT_ALT:
+            layer_on_base_qwerty_when_modifier(record);
+            break;
+        case KC_RIGHT_GUI:
+            layer_on_base_qwerty_when_modifier(record);
+            break;
+        case KC_RIGHT_SHIFT:
+            if ( BASE != get_highest_layer(layer_state)) {
+                layer_on_base_qwerty_when_modifier(record);
+            }
+            break;
+    }
+    return true;
+};
+
