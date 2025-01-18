@@ -34,13 +34,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MS_BTN2, KC_MS_BTN1,                    MO(ONOFF),
         // 右手
         LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, KC_BSPC,
-        KC_Y, KC_U, KC_I,    KC_O,             KC_P,    KC_ENT,
-        KC_H, KC_J, KC_K,    LT(MOUSE, KC_L),  KC_SCLN, KC_RSFT,
-        KC_N, KC_M, KC_COMM, KC_DOT,           KC_SLSH,
+        KC_K, KC_D, KC_L, KC_C,  KC_W, KC_ENT,
+        KC_M, KC_H, KC_T, KC_S,  KC_R, KC_RSFT,
+        KC_B, KC_F, KC_G, KC_V,  KC_X,
                              MOD_SCRL,
         KC_SPACE, KC_LNG1,
         KC_UP, KC_DOWN, KC_LEFT, KC_RIGHT,         R_CHMOD,
         KC_MS_BTN1, KC_MS_BTN2,                    MO(OFFON)
+    ),
+  [BASE_QWERTY] = LAYOUT(
+        // 左手
+        // 天面スイッチ
+        _______,  _______, _______, _______, _______, _______,
+        _______,  KC_Q, KC_W, KC_E, KC_R, KC_T,
+        _______,  KC_A, KC_S, KC_D, KC_F, KC_G,
+                  KC_Z, KC_X, KC_C, KC_V, KC_B,
+                               _______,
+        // 側面スイッチ
+        _______, _______,
+        // 十字キーorジョイスティック                // ジョイスティックスイッチ
+        _______, _______, _______, _______,         _______,
+        // 追加スイッチ                             // トグルスイッチ
+        _______, _______,                    _______,
+        // 右手
+        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, _______,
+        KC_Y, KC_U, KC_I,    KC_O,   KC_P,    _______,
+        KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, _______,
+        KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+                             _______,
+        _______, _______,
+        _______, _______, _______, _______,         _______,
+        _______, _______,                    _______
     ),
     [ONOFF] = LAYOUT(
         // 左手
