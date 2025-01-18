@@ -48,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 左手
         // 天面スイッチ
         _______,  _______, _______, _______, _______, _______,
-        _______,  KC_Q, KC_W, KC_E, KC_R, KC_T,
-        _______,  KC_A, KC_S, KC_D, KC_F, KC_G,
-                  KC_Z, KC_X, KC_C, KC_V, KC_B,
+        _______,  KC_MINUS, SG_に, SG_は, KC_COMM, SG_ち,
+        _______,  SG_の,    SG_と, SG_か, SG_ん, SG_っ,
+                  SG_す,    SG_ま, SG_き, SG_る, SG_つ,
                                _______,
         // 側面スイッチ
         _______, _______,
@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______,                    _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
-        KC_Y, KC_U, KC_I,    KC_O,   KC_P,    _______,
-        KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, _______,
-        KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+        SG_ぐ, SG_ば, SG_こ, SG_が,  SG_ひ,    _______,
+        SG_く, SG_う, SG_い, SG_し,  SG_な, _______,
+        SG_て, SG_た, SG_で, KC_DOT, SG_ぶ,
                              _______,
         _______, _______,
         _______, _______, _______, _______,         _______,
@@ -260,6 +260,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
             }
             break;
     }
+
     return true;
 };
 
