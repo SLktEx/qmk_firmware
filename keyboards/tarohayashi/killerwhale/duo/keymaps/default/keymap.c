@@ -48,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 左手
         // 天面スイッチ
         _______,  _______, _______, _______, _______, _______,
-        _______,  SG_GE, SG_NI, SG_HA, KC_COMM, SG_TI,
-        _______,  SG_NO,    SG_TO, SG_KA, SG_NN, SG_XTU,
-                  SG_SU,    SG_MA, SG_KI, SG_RU, SG_TU,
+        _______,  KC_MINUS, SG_に, SG_は, KC_COMM, SG_ち,
+        _______,  SG_の,    SG_と, SG_か, SG_ん, SG_っ,
+                  SG_す,    SG_ま, SG_き, SG_る, SG_つ,
                                _______,
         // 側面スイッチ
         _______, _______,
@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______,                    _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
-        SG_GU, SG_BA, SG_KO, SG_GA,  SG_HI,    _______,
-        SG_KU, SG_U, SG_I, SG_SI,  SG_NA, _______,
-        SG_TE, SG_TA, SG_DE, KC_DOT, SG_BU,
+        SG_ぐ, SG_ば, SG_こ, SG_が,  SG_ひ,    _______,
+        SG_く, SG_う, SG_い, SG_し,  SG_な, _______,
+        SG_て, SG_た, SG_で, KC_DOT, SG_ぶ,
                              _______,
         _______, _______,
         _______, _______, _______, _______,         _______,
