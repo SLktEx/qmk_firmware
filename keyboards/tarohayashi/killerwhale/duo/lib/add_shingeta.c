@@ -139,6 +139,20 @@ bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record){
                 SEND_STRING("nn");
             }
             break;
+        case SG_COMM:
+            if(record->event.pressed) {
+                register_code(KC_COMM);
+            }else {
+                unregister_code(KC_COMM);
+            }
+            break;
+        case SG_DOT:
+            if(record->event.pressed) {
+                register_code(KC_DOT);
+            }else {
+                unregister_code(KC_DOT);
+            }
+            break;
     }
     return true;
 }

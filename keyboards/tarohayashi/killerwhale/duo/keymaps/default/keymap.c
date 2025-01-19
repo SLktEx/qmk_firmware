@@ -30,7 +30,6 @@ enum combo_events {
     C_SG_ぐぇ,
     C_SG_ぐぉ,
     C_SG_け,
-    C_SG_げ,
     C_SG_ご,
     C_SG_さ,
     C_SG_ざ,
@@ -116,114 +115,113 @@ enum combo_events {
     C_SG_ヴ,
 };
 
-const uint16_t PROGMEM C_SG_ぁ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_あ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_うぃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_うぇ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_うぉ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぇ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_え_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぉ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_お_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_きゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_きゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_きょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぎ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぎゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぎゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぎょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぐぁ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぐぃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぐぅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぐぇ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぐぉ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_け_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_げ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ご_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_さ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ざ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_しぇ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_しゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_しゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_しょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_じ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_じぇ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_じゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_じゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_じょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ず_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_せ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぜ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_そ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぞ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_だ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ちぇ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ちゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ちゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ちょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぢ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぢゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぢゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぢょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_づ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_てぃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_でぃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ど_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_にゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_にゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_にょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぬ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ね_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぱ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ひゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ひゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ひょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_び_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_びゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_びゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_びょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぴ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぴゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぴゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぴょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ふ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ふぁ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ふぃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ふぇ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ふぉ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぷ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_へ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_べ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぺ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ほ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぼ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ぽ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_み_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_みゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_みゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_みょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_む_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_め_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_も_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_や_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ゆ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_よ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ら_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_り_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_りゃ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_りゅ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_りょ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_れ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ろ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ゎ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_わ_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_を_COMBO[] = {SG_, SG_, COMBO_END};
-const uint16_t PROGMEM C_SG_ヴ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_ぁ_COMBO[] = {SG_ぐ, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_あ_COMBO[] = {SG_う, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_ぃ_COMBO[] = {SG_く, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_ぅ_COMBO[] = {SG_て, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_うぃ_COMBO[] = {SG_ぐ, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_うぇ_COMBO[] = {SG_ひ, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_うぉ_COMBO[] = {SG_う, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_ぇ_COMBO[] = {SG_ば, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_え_COMBO[] = {SG_な, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_ぉ_COMBO[] = {SG_た, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_お_COMBO[] = {SG_し, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_きゃ_COMBO[] = {SG_る, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_きゅ_COMBO[] = {SG_こ, SG_COMM, COMBO_END};
+const uint16_t PROGMEM C_SG_きょ_COMBO[] = {SG_ん, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_ぎ_COMBO[] = {SG_き, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_ぎゃ_COMBO[] = {SG_る, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_ぎゅ_COMBO[] = {SG_COMM, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_ぎょ_COMBO[] = {SG_ん, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_ぐぁ_COMBO[] = {SG_ぐ, SG_に, COMBO_END};
+const uint16_t PROGMEM C_SG_ぐぃ_COMBO[] = {SG_く, SG_に, COMBO_END};
+const uint16_t PROGMEM C_SG_ぐぅ_COMBO[] = {SG_て, SG_に, COMBO_END};
+const uint16_t PROGMEM C_SG_ぐぇ_COMBO[] = {SG_ば, SG_に, COMBO_END};
+const uint16_t PROGMEM C_SG_ぐぉ_COMBO[] = {SG_う, SG_に, COMBO_END};
+const uint16_t PROGMEM C_SG_け_COMBO[] = {SG_し, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_ご_COMBO[] = {SG_い, SG_に, COMBO_END};
+const uint16_t PROGMEM C_SG_さ_COMBO[] = {SG_と, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_ざ_COMBO[] = {SG_ま, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_しぇ_COMBO[] = {SG_と, SG_ぐ, COMBO_END};
+const uint16_t PROGMEM C_SG_しゃ_COMBO[] = {SG_き, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_しゅ_COMBO[] = {SG_に, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_しょ_COMBO[] = {SG_は, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_じ_COMBO[] = {SG_と, SG_い, COMBO_END};
+const uint16_t PROGMEM C_SG_じぇ_COMBO[] = {SG_と, SG_ひ, COMBO_END};
+const uint16_t PROGMEM C_SG_じゃ_COMBO[] = {SG_き, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_じゅ_COMBO[] = {SG_に, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_じょ_COMBO[] = {SG_は, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_ず_COMBO[] = {SG_っ, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_せ_COMBO[] = {SG_て, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_ぜ_COMBO[] = {SG_す, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_そ_COMBO[] = {SG_な, SG_と, COMBO_END};
+const uint16_t PROGMEM C_SG_ぞ_COMBO[] = {SG_ま, SG_い, COMBO_END};
+const uint16_t PROGMEM C_SG_だ_COMBO[] = {SG_た, SG_と, COMBO_END};
+const uint16_t PROGMEM C_SG_ちぇ_COMBO[] = {SG_ぶ, SG_と, COMBO_END};
+const uint16_t PROGMEM C_SG_ちゃ_COMBO[] = {SG_つ, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_ちゅ_COMBO[] = {SG_ち, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_ちょ_COMBO[] = {SG_っ, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_ぢ_COMBO[] = {SG_し, SG_げ, COMBO_END};
+const uint16_t PROGMEM C_SG_ぢゃ_COMBO[] = {SG_つ, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_ぢゅ_COMBO[] = {SG_ち, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_ぢょ_COMBO[] = {SG_っ, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_づ_COMBO[] = {SG_い, SG_す, COMBO_END};
+const uint16_t PROGMEM C_SG_てぃ_COMBO[] = {SG_し, SG_COMM, COMBO_END};
+const uint16_t PROGMEM C_SG_でぃ_COMBO[] = {SG_ち, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_ど_COMBO[] = {SG_と, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_にゃ_COMBO[] = {SG_つ, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_にゅ_COMBO[] = {SG_ち, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_にょ_COMBO[] = {SG_っ, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_ぬ_COMBO[] = {SG_つ, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_ね_COMBO[] = {SG_た, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_ぱ_COMBO[] = {SG_ば, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_ひゃ_COMBO[] = {SG_す, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_ひゅ_COMBO[] = {SG_げ, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_ひょ_COMBO[] = {SG_の, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_び_COMBO[] = {SG_と, SG_く, COMBO_END};
+const uint16_t PROGMEM C_SG_びゃ_COMBO[] = {SG_る, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_びゅ_COMBO[] = {SG_COMM, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_びょ_COMBO[] = {SG_ん, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_ぴ_COMBO[] = {SG_で, SG_と, COMBO_END};
+const uint16_t PROGMEM C_SG_ぴゃ_COMBO[] = {SG_き, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_ぴゅ_COMBO[] = {SG_に, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_ぴょ_COMBO[] = {SG_は, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_ふ_COMBO[] = {SG_は, SG_い, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぁ_COMBO[] = {SG_げ, SG_い, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぃ_COMBO[] = {SG_い, SG_COMM, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぇ_COMBO[] = {SG_い, SG_ち, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぉ_COMBO[] = {SG_つ, SG_い, COMBO_END};
+const uint16_t PROGMEM C_SG_ぷ_COMBO[] = {SG_DOT, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_へ_COMBO[] = {SG_く, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_べ_COMBO[] = {SG_で, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_ぺ_COMBO[] = {SG_ば, SG_と, COMBO_END};
+const uint16_t PROGMEM C_SG_ほ_COMBO[] = {SG_い, SG_の, COMBO_END};
+const uint16_t PROGMEM C_SG_ぼ_COMBO[] = {SG_き, SG_い, COMBO_END};
+const uint16_t PROGMEM C_SG_ぽ_COMBO[] = {SG_DOT, SG_と, COMBO_END};
+const uint16_t PROGMEM C_SG_み_COMBO[] = {SG_か, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_みゃ_COMBO[] = {SG_す, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_みゅ_COMBO[] = {SG_げ, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_みょ_COMBO[] = {SG_の, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_む_COMBO[] = {SG_い, SG_る, COMBO_END};
+const uint16_t PROGMEM C_SG_め_COMBO[] = {SG_に, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_も_COMBO[] = {SG_い, SG_ん, COMBO_END};
+const uint16_t PROGMEM C_SG_ゃ_COMBO[] = {SG_ま, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_や_COMBO[] = {SG_と, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_ゅ_COMBO[] = {SG_ま, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_ゆ_COMBO[] = {SG_っ, SG_い, COMBO_END};
+const uint16_t PROGMEM C_SG_ょ_COMBO[] = {SG_ま, SG_な, COMBO_END};
+const uint16_t PROGMEM C_SG_よ_COMBO[] = {SG_か, SG_こ, COMBO_END};
+const uint16_t PROGMEM C_SG_ら_COMBO[] = {SG_と, SG_う, COMBO_END};
+const uint16_t PROGMEM C_SG_り_COMBO[] = {SG_し, SG_ん, COMBO_END};
+const uint16_t PROGMEM C_SG_りゃ_COMBO[] = {SG_す, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_りゅ_COMBO[] = {SG_が, SG_げ, COMBO_END};
+const uint16_t PROGMEM C_SG_りょ_COMBO[] = {SG_の, SG_が, COMBO_END};
+const uint16_t PROGMEM C_SG_れ_COMBO[] = {SG_い, SG_か, COMBO_END};
+const uint16_t PROGMEM C_SG_ろ_COMBO[] = {SG_る, SG_し, COMBO_END};
+const uint16_t PROGMEM C_SG_ゎ_COMBO[] = {SG_ひ, SG_は, COMBO_END};
+const uint16_t PROGMEM C_SG_わ_COMBO[] = {SG_て, SG_と, COMBO_END};
+const uint16_t PROGMEM C_SG_を_COMBO[] = {SG_し, SG_の, COMBO_END};
+const uint16_t PROGMEM C_SG_ヴ_COMBO[] = {SG_ぶ, SG_か, COMBO_END};
 
 
 combo_t key_combos[] = {
@@ -251,7 +249,6 @@ combo_t key_combos[] = {
     [C_SG_ぐぇ] = COMBO_ACTION(C_SG_ぐぇ_COMBO),
     [C_SG_ぐぉ] = COMBO_ACTION(C_SG_ぐぉ_COMBO),
     [C_SG_け] = COMBO_ACTION(C_SG_け_COMBO),
-    [C_SG_げ] = COMBO_ACTION(C_SG_げ_COMBO),
     [C_SG_ご] = COMBO_ACTION(C_SG_ご_COMBO),
     [C_SG_さ] = COMBO_ACTION(C_SG_さ_COMBO),
     [C_SG_ざ] = COMBO_ACTION(C_SG_ざ_COMBO),
@@ -460,11 +457,6 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         SEND_STRING("ke");
       }
       break;
-    case C_SG_げ:
-      if (pressed) {
-        SEND_STRING("ge");
-      }
-      break;
     case C_SG_ご:
       if (pressed) {
         SEND_STRING("go");
@@ -652,7 +644,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       break;
     case C_SG_ひゅ:
       if (pressed) {
-        SEND_STRING("nyu");
+        SEND_STRING("hyu");
       }
       break;
     case C_SG_ひょ:
@@ -923,7 +915,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 左手
         // 天面スイッチ
         _______,  _______, _______, _______, _______, _______,
-        _______,  SG_げ, SG_に, SG_は, KC_COMM, SG_ち,
+        _______,  SG_げ, SG_に, SG_は, SG_COMM, SG_ち,
         _______,  SG_の,    SG_と, SG_か, SG_ん, SG_っ,
                   SG_す,    SG_ま, SG_き, SG_る, SG_つ,
                                _______,
@@ -937,7 +929,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,
         SG_ぐ, SG_ば, SG_こ, SG_が,  SG_ひ,    _______,
         SG_く, SG_う, SG_い, SG_し,  SG_な, _______,
-        SG_て, SG_た, SG_で, KC_DOT, SG_ぶ,
+        SG_て, SG_た, SG_で, SG_DOT, SG_ぶ,
                              _______,
         _______, _______,
         _______, _______, _______, _______,         _______,
