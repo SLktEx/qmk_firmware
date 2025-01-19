@@ -10,6 +10,9 @@ enum combo_events {
     C_SG_あ,
     C_SG_ぃ,
     C_SG_ぅ,
+    C_SG_うぃ,
+    C_SG_うぇ,
+    C_SG_うぉ,
     C_SG_ぇ,
     C_SG_え,
     C_SG_ぉ,
@@ -31,6 +34,8 @@ enum combo_events {
     C_SG_ご,
     C_SG_さ,
     C_SG_ざ,
+    C_SG_しぇ,
+    C_SG_じぇ,
     C_SG_しゃ,
     C_SG_しゅ,
     C_SG_しょ,
@@ -44,6 +49,7 @@ enum combo_events {
     C_SG_そ,
     C_SG_ぞ,
     C_SG_だ,
+    C_SG_ちぇ,
     C_SG_ちゃ,
     C_SG_ちゅ,
     C_SG_ちょ,
@@ -52,6 +58,8 @@ enum combo_events {
     C_SG_ぢゅ,
     C_SG_ぢょ,
     C_SG_づ,
+    C_SG_てぃ,
+    C_SG_でぃ,
     C_SG_ど,
     C_SG_にゃ,
     C_SG_にゅ,
@@ -71,6 +79,10 @@ enum combo_events {
     C_SG_ぴゅ,
     C_SG_ぴょ,
     C_SG_ふ,
+    C_SG_ふぁ,
+    C_SG_ふぃ,
+    C_SG_ふぇ,
+    C_SG_ふぉ,
     C_SG_ぷ,
     C_SG_へ,
     C_SG_べ,
@@ -98,6 +110,7 @@ enum combo_events {
     C_SG_りょ,
     C_SG_れ,
     C_SG_ろ,
+    C_SG_ゎ,
     C_SG_わ,
     C_SG_を,
     C_SG_ヴ,
@@ -107,6 +120,9 @@ const uint16_t PROGMEM C_SG_ぁ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_あ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぅ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_うぃ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_うぇ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_うぉ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぇ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_え_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぉ_COMBO[] = {SG_, SG_, COMBO_END};
@@ -128,10 +144,12 @@ const uint16_t PROGMEM C_SG_げ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ご_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_さ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ざ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_しぇ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_しゃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_しゅ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_しょ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_じ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_じぇ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_じゃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_じゅ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_じょ_COMBO[] = {SG_, SG_, COMBO_END};
@@ -141,6 +159,7 @@ const uint16_t PROGMEM C_SG_ぜ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_そ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぞ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_だ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_ちぇ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ちゃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ちゅ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ちょ_COMBO[] = {SG_, SG_, COMBO_END};
@@ -149,6 +168,8 @@ const uint16_t PROGMEM C_SG_ぢゃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぢゅ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぢょ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_づ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_てぃ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_でぃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ど_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_にゃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_にゅ_COMBO[] = {SG_, SG_, COMBO_END};
@@ -168,6 +189,10 @@ const uint16_t PROGMEM C_SG_ぴゃ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぴゅ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぴょ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ふ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぁ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぃ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぇ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_ふぉ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ぷ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_へ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_べ_COMBO[] = {SG_, SG_, COMBO_END};
@@ -195,6 +220,7 @@ const uint16_t PROGMEM C_SG_りゅ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_りょ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_れ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ろ_COMBO[] = {SG_, SG_, COMBO_END};
+const uint16_t PROGMEM C_SG_ゎ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_わ_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_を_COMBO[] = {SG_, SG_, COMBO_END};
 const uint16_t PROGMEM C_SG_ヴ_COMBO[] = {SG_, SG_, COMBO_END};
@@ -205,6 +231,9 @@ combo_t key_combos[] = {
     [C_SG_あ] = COMBO_ACTION(C_SG_あ_COMBO),
     [C_SG_ぃ] = COMBO_ACTION(C_SG_ぃ_COMBO),
     [C_SG_ぅ] = COMBO_ACTION(C_SG_ぅ_COMBO),
+    [C_SG_うぃ] = COMBO_ACTION(C_SG_うぃ_COMBO),
+    [C_SG_うぇ] = COMBO_ACTION(C_SG_うぇ_COMBO),
+    [C_SG_うぉ] = COMBO_ACTION(C_SG_うぉ_COMBO),
     [C_SG_ぇ] = COMBO_ACTION(C_SG_ぇ_COMBO),
     [C_SG_え] = COMBO_ACTION(C_SG_え_COMBO),
     [C_SG_ぉ] = COMBO_ACTION(C_SG_ぉ_COMBO),
@@ -226,10 +255,12 @@ combo_t key_combos[] = {
     [C_SG_ご] = COMBO_ACTION(C_SG_ご_COMBO),
     [C_SG_さ] = COMBO_ACTION(C_SG_さ_COMBO),
     [C_SG_ざ] = COMBO_ACTION(C_SG_ざ_COMBO),
+    [C_SG_しぇ] = COMBO_ACTION(C_SG_しぇ_COMBO),
     [C_SG_しゃ] = COMBO_ACTION(C_SG_しゃ_COMBO),
     [C_SG_しゅ] = COMBO_ACTION(C_SG_しゅ_COMBO),
     [C_SG_しょ] = COMBO_ACTION(C_SG_しょ_COMBO),
     [C_SG_じ] = COMBO_ACTION(C_SG_じ_COMBO),
+    [C_SG_じぇ] = COMBO_ACTION(C_SG_じぇ_COMBO),
     [C_SG_じゃ] = COMBO_ACTION(C_SG_じゃ_COMBO),
     [C_SG_じゅ] = COMBO_ACTION(C_SG_じゅ_COMBO),
     [C_SG_じょ] = COMBO_ACTION(C_SG_じょ_COMBO),
@@ -239,6 +270,7 @@ combo_t key_combos[] = {
     [C_SG_そ] = COMBO_ACTION(C_SG_そ_COMBO),
     [C_SG_ぞ] = COMBO_ACTION(C_SG_ぞ_COMBO),
     [C_SG_だ] = COMBO_ACTION(C_SG_だ_COMBO),
+    [C_SG_ちぇ] = COMBO_ACTION(C_SG_ちぇ_COMBO),
     [C_SG_ちゃ] = COMBO_ACTION(C_SG_ちゃ_COMBO),
     [C_SG_ちゅ] = COMBO_ACTION(C_SG_ちゅ_COMBO),
     [C_SG_ちょ] = COMBO_ACTION(C_SG_ちょ_COMBO),
@@ -247,6 +279,8 @@ combo_t key_combos[] = {
     [C_SG_ぢゅ] = COMBO_ACTION(C_SG_ぢゅ_COMBO),
     [C_SG_ぢょ] = COMBO_ACTION(C_SG_ぢょ_COMBO),
     [C_SG_づ] = COMBO_ACTION(C_SG_づ_COMBO),
+    [C_SG_てぃ] = COMBO_ACTION(C_SG_てぃ_COMBO),
+    [C_SG_でぃ] = COMBO_ACTION(C_SG_でぃ_COMBO),
     [C_SG_ど] = COMBO_ACTION(C_SG_ど_COMBO),
     [C_SG_にゃ] = COMBO_ACTION(C_SG_にゃ_COMBO),
     [C_SG_にゅ] = COMBO_ACTION(C_SG_にゅ_COMBO),
@@ -266,6 +300,10 @@ combo_t key_combos[] = {
     [C_SG_ぴゅ] = COMBO_ACTION(C_SG_ぴゅ_COMBO),
     [C_SG_ぴょ] = COMBO_ACTION(C_SG_ぴょ_COMBO),
     [C_SG_ふ] = COMBO_ACTION(C_SG_ふ_COMBO),
+    [C_SG_ふぁ] = COMBO_ACTION(C_SG_ふぁ_COMBO),
+    [C_SG_ふぃ] = COMBO_ACTION(C_SG_ふぃ_COMBO),
+    [C_SG_ふぇ] = COMBO_ACTION(C_SG_ふぇ_COMBO),
+    [C_SG_ふぉ] = COMBO_ACTION(C_SG_ふぉ_COMBO),
     [C_SG_ぷ] = COMBO_ACTION(C_SG_ぷ_COMBO),
     [C_SG_へ] = COMBO_ACTION(C_SG_へ_COMBO),
     [C_SG_べ] = COMBO_ACTION(C_SG_べ_COMBO),
@@ -293,6 +331,7 @@ combo_t key_combos[] = {
     [C_SG_りょ] = COMBO_ACTION(C_SG_りょ_COMBO),
     [C_SG_れ] = COMBO_ACTION(C_SG_れ_COMBO),
     [C_SG_ろ] = COMBO_ACTION(C_SG_ろ_COMBO),
+    [C_SG_ゎ] = COMBO_ACTION(C_SG_ゎ_COMBO),
     [C_SG_わ] = COMBO_ACTION(C_SG_わ_COMBO),
     [C_SG_を] = COMBO_ACTION(C_SG_を_COMBO),
     [C_SG_ヴ] = COMBO_ACTION(C_SG_ヴ_COMBO),
@@ -308,7 +347,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       break;
     case C_SG_あ:
       if (pressed) {
-        SEND_STRING("あ");
+        SEND_STRING("a");
       }
       break;
     case C_SG_ぃ:
@@ -319,6 +358,21 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case C_SG_ぅ:
       if (pressed) {
         SEND_STRING("xu");
+      }
+      break;
+    case C_SG_うぃ:
+      if (pressed) {
+        SEND_STRING("uxi");
+      }
+      break;
+    case C_SG_うぇ:
+      if (pressed) {
+        SEND_STRING("uxe");
+      }
+      break;
+    case C_SG_うぉ:
+      if (pressed) {
+        SEND_STRING("uxo");
       }
       break;
     case C_SG_ぇ:
@@ -426,6 +480,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         SEND_STRING("za");
       }
       break;
+    case C_SG_しぇ:
+      if (pressed) {
+        SEND_STRING("sye");
+      }
+      break;
     case C_SG_しゃ:
       if (pressed) {
         SEND_STRING("sya");
@@ -444,6 +503,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case C_SG_じ:
       if (pressed) {
         SEND_STRING("zi");
+      }
+      break;
+    case C_SG_じぇ:
+      if (pressed) {
+        SEND_STRING("zye");
       }
       break;
     case C_SG_じゃ:
@@ -491,6 +555,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         SEND_STRING("da");
       }
       break;
+    case C_SG_ちぇ:
+      if (pressed) {
+        SEND_STRING("tye");
+      }
+      break;
     case C_SG_ちゃ:
       if (pressed) {
         SEND_STRING("tya");
@@ -529,6 +598,16 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case C_SG_づ:
       if (pressed) {
         SEND_STRING("du");
+      }
+      break;
+    case C_SG_てぃ:
+      if (pressed) {
+        SEND_STRING("texi");
+      }
+      break;
+    case C_SG_でぃ:
+      if (pressed) {
+        SEND_STRING("dexi");
       }
       break;
     case C_SG_ど:
@@ -624,6 +703,26 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case C_SG_ふ:
       if (pressed) {
         SEND_STRING("hu");
+      }
+      break;
+    case C_SG_ふぁ:
+      if (pressed) {
+        SEND_STRING("fa");
+      }
+      break;
+    case C_SG_ふぃ:
+      if (pressed) {
+        SEND_STRING("fi");
+      }
+      break;
+    case C_SG_ふぇ:
+      if (pressed) {
+        SEND_STRING("fe");
+      }
+      break;
+    case C_SG_ふぉ:
+      if (pressed) {
+        SEND_STRING("fo");
       }
       break;
     case C_SG_ぷ:
@@ -759,6 +858,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case C_SG_ろ:
       if (pressed) {
         SEND_STRING("ro");
+      }
+      break;
+    case C_SG_ゎ:
+      if (pressed) {
+        SEND_STRING("xwa");
       }
       break;
     case C_SG_わ:
