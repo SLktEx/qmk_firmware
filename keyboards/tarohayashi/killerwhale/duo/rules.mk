@@ -9,6 +9,8 @@ SRC += lib/add_oled.c
 SRC += lib/add_rgblayers.c
 
 SRC += lib/add_shingeta.c
+SRC += lib/add_ichikawa.c
+
 
 OS_DETECTION_ENABLE = yes
 NO_USB_STARTUP_CHECK = yes

@@ -4,6 +4,8 @@
 #include QMK_KEYBOARD_H
 #include "lib/add_keycodes.h"
 #include "lib/add_shingeta.h"
+#include "lib/add_ichikawa.h"
+
 
 enum combo_events {
     C_SG_ぁ,
@@ -1096,6 +1098,7 @@ void layer_on_qwerty_when_modifier(keyrecord_t *record) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record){
     process_record_shingetakeycodes(keycode, record,SHINGETA);
+    process_record_ichikawakeycodes(keycode, record, 0);
 
     switch (keycode) {
         case KC_LEFT_CTRL:
