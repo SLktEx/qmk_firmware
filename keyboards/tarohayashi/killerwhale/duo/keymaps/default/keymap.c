@@ -303,477 +303,477 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
     case C_SG_ぁ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xa");
       }
       break;
     case C_SG_あ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("あ");
       }
       break;
     case C_SG_ぃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xi");
       }
       break;
     case C_SG_ぅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xu");
       }
       break;
     case C_SG_ぇ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xe");
       }
       break;
     case C_SG_え:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("e");
       }
       break;
     case C_SG_ぉ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xo");
       }
       break;
     case C_SG_お:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("o");
       }
       break;
     case C_SG_きゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("kya");
       }
       break;
     case C_SG_きゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("kyu");
       }
       break;
     case C_SG_きょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("kyo");
       }
       break;
     case C_SG_ぎ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gi");
       }
       break;
     case C_SG_ぎゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gya");
       }
       break;
     case C_SG_ぎゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gyu");
       }
       break;
     case C_SG_ぎょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gyo");
       }
       break;
     case C_SG_ぐぁ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gwa");
       }
       break;
     case C_SG_ぐぃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gwi");
       }
       break;
     case C_SG_ぐぅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gwu");
       }
       break;
     case C_SG_ぐぇ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gwe");
       }
       break;
     case C_SG_ぐぉ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("gwo");
       }
       break;
     case C_SG_け:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ke");
       }
       break;
     case C_SG_げ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ge");
       }
       break;
     case C_SG_ご:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("go");
       }
       break;
     case C_SG_さ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("sa");
       }
       break;
     case C_SG_ざ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("za");
       }
       break;
     case C_SG_しゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("sya");
       }
       break;
     case C_SG_しゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("syu");
       }
       break;
     case C_SG_しょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("syo");
       }
       break;
     case C_SG_じ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("zi");
       }
       break;
     case C_SG_じゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("zya");
       }
       break;
     case C_SG_じゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("zyu");
       }
       break;
     case C_SG_じょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("zyo");
       }
       break;
     case C_SG_ず:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("zu");
       }
       break;
     case C_SG_せ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("se");
       }
       break;
     case C_SG_ぜ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ze");
       }
       break;
     case C_SG_そ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("so");
       }
       break;
     case C_SG_ぞ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("zo");
       }
       break;
     case C_SG_だ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("da");
       }
       break;
     case C_SG_ちゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("tya");
       }
       break;
     case C_SG_ちゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("tyu");
       }
       break;
     case C_SG_ちょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("tyo");
       }
       break;
     case C_SG_ぢ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("di");
       }
       break;
     case C_SG_ぢゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("dya");
       }
       break;
     case C_SG_ぢゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("dyu");
       }
       break;
     case C_SG_ぢょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("dyo");
       }
       break;
     case C_SG_づ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("du");
       }
       break;
     case C_SG_ど:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("do");
       }
       break;
     case C_SG_にゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("nya");
       }
       break;
     case C_SG_にゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("nyu");
       }
       break;
     case C_SG_にょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("nyo");
       }
       break;
     case C_SG_ぬ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("nu");
       }
       break;
     case C_SG_ね:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ne");
       }
       break;
     case C_SG_ぱ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("pa");
       }
       break;
     case C_SG_ひゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("hya");
       }
       break;
     case C_SG_ひゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("nyu");
       }
       break;
     case C_SG_ひょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("hyo");
       }
       break;
     case C_SG_び:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("bi");
       }
       break;
     case C_SG_びゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("bya");
       }
       break;
     case C_SG_びゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("byu");
       }
       break;
     case C_SG_びょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("byo");
       }
       break;
     case C_SG_ぴ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("pi");
       }
       break;
     case C_SG_ぴゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("pya");
       }
       break;
     case C_SG_ぴゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("pyu");
       }
       break;
     case C_SG_ぴょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("pyo");
       }
       break;
     case C_SG_ふ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("hu");
       }
       break;
     case C_SG_ぷ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("pu");
       }
       break;
     case C_SG_へ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("he");
       }
       break;
     case C_SG_べ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("be");
       }
       break;
     case C_SG_ぺ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("pe");
       }
       break;
     case C_SG_ほ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ho");
       }
       break;
     case C_SG_ぼ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("bo");
       }
       break;
     case C_SG_ぽ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("po");
       }
       break;
     case C_SG_み:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("mi");
       }
       break;
     case C_SG_みゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("mya");
       }
       break;
     case C_SG_みゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("myu");
       }
       break;
     case C_SG_みょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("myo");
       }
       break;
     case C_SG_む:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("mu");
       }
       break;
     case C_SG_め:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("me");
       }
       break;
     case C_SG_も:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("mo");
       }
       break;
     case C_SG_ゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xya");
       }
       break;
     case C_SG_や:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ya");
       }
       break;
     case C_SG_ゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xyu");
       }
       break;
     case C_SG_ゆ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("yu");
       }
       break;
     case C_SG_ょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("xyo");
       }
       break;
     case C_SG_よ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("yo");
       }
       break;
     case C_SG_ら:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ra");
       }
       break;
     case C_SG_り:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ri");
       }
       break;
     case C_SG_りゃ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("rya");
       }
       break;
     case C_SG_りゅ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ryu");
       }
       break;
     case C_SG_りょ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ryo");
       }
       break;
     case C_SG_れ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("re");
       }
       break;
     case C_SG_ろ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("ro");
       }
       break;
     case C_SG_わ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("wa");
       }
       break;
     case C_SG_を:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("wo");
       }
       break;
     case C_SG_ヴ:
       if (pressed) {
-        SEND_STRING("");
+        SEND_STRING("vu");
       }
       break;
   }
@@ -819,7 +819,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 左手
         // 天面スイッチ
         _______,  _______, _______, _______, _______, _______,
-        _______,  KC_MINUS, SG_に, SG_は, KC_COMM, SG_ち,
+        _______,  SG_げ, SG_に, SG_は, KC_COMM, SG_ち,
         _______,  SG_の,    SG_と, SG_か, SG_ん, SG_っ,
                   SG_す,    SG_ま, SG_き, SG_る, SG_つ,
                                _______,
