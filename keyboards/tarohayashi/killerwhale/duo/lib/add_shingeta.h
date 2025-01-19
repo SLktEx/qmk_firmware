@@ -127,7 +127,8 @@ enum SG_keycodes{
     SG_みょ,
     SG_りゃ,
     SG_りゅ,
-    SG_りょ
+    SG_りょ,
+    SG_
 };
 
 bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record);
