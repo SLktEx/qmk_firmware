@@ -173,7 +173,7 @@ bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record, uint
             break;
         // 全角半角対応
         // PCと日本語英語がずれたらSG_TOGGLEで変更してもろて
-        case KC_LANGUAGE_5:
+        case KC_GRV:
             if(record->event.pressed) {
                 if(ime_on) {
                     layer_on(layer);
@@ -187,7 +187,13 @@ bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record, uint
         case KC_LNG1:
             layer_on(layer);
             break;
+        case KC_INTERNATIONAL_4:
+            layer_on(layer);
+            break;
         case KC_LNG2:
+            layer_off(layer);
+            break;
+        case KC_INTERNATIONAL_5:
             layer_off(layer);
             break;
     }
