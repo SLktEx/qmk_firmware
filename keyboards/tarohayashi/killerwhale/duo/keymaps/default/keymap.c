@@ -1101,6 +1101,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
     process_record_ichikawakeycodes(keycode, record, 0);
 
     switch (keycode) {
+        case IK_GUI:
+            layer_on_qwerty_when_modifier(record);
+            break;
         case KC_LEFT_CTRL:
             layer_on_qwerty_when_modifier(record);
             break;
