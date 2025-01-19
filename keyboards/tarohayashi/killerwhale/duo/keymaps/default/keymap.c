@@ -122,6 +122,10 @@ enum combo_events {
     C_SG_わ,
     C_SG_を,
     C_SG_ヴ,
+
+    // utils
+    QUOT_Ctrl_Shift,
+    QUOT_Symbol,
 };
 
 const uint16_t PROGMEM C_SG_ぁ_COMBO[] = {SG_ぐ, SG_は, COMBO_END};
@@ -231,6 +235,8 @@ const uint16_t PROGMEM C_SG_ゎ_COMBO[] = {SG_ひ, SG_は, COMBO_END};
 const uint16_t PROGMEM C_SG_わ_COMBO[] = {SG_て, SG_と, COMBO_END};
 const uint16_t PROGMEM C_SG_を_COMBO[] = {SG_し, SG_の, COMBO_END};
 const uint16_t PROGMEM C_SG_ヴ_COMBO[] = {SG_ぶ, SG_か, COMBO_END};
+const uint16_t PROGMEM QUOT_Ctrl_Shift_COMBO = {IK_GUI, C_S_T(KC_QUOT), COMBO_END};
+const uint16_t PROGMEM QUOT_Symbol_COMBO = {LT(SYMBOL,KC_LNG1), C_S_T(KC_QUOT), COMBO_END};
 
 
 combo_t key_combos[] = {
@@ -341,6 +347,9 @@ combo_t key_combos[] = {
     [C_SG_わ] = COMBO_ACTION(C_SG_わ_COMBO),
     [C_SG_を] = COMBO_ACTION(C_SG_を_COMBO),
     [C_SG_ヴ] = COMBO_ACTION(C_SG_ヴ_COMBO),
+
+    [QUOT_Ctrl_Shift] = COMBO_ACTION(QUOT_Ctrl_Shift_COMBO),
+    [QUOT_Symbol] = COMBO_ACTION(QUOT_Symbol_COMBO),
 };
 /* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
 
@@ -881,6 +890,27 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         SEND_STRING("vu");
       }
       break;
+
+    // utils
+
+    case QUOT_Ctrl_Shift:
+      if (pressed) {
+        register_code(KC_LEFT_SHIFT);
+        register_code(KC_LEFT_CTRL);
+      } else {
+        unregister_code(KC_LEFT_CTRL);
+        unregister_code(KC_LEFT_SHIFT);
+      }
+      break;
+    case QUOT_Symbol:
+      if (pressed) {
+        register_code(KC_LEFT_SHIFT);
+        register_code(KC_QUOT);
+      } else {
+        unregister_code(KC_QUOT);
+        unregister_code(KC_LEFT_SHIFT);
+      }
+      break;
   }
 }
 
@@ -889,7 +919,7 @@ enum layer_number {
     BASE = 0,
     SHINGETA,
     QWERTY, ONLY_QWERTY,                       // トグルスイッチで変更するレイヤー
-    NUM, SYMBOL, ICHIKAWA,                       // 長押しで変更するレイヤー
+    SYMBOL, NUM, ICHIKAWA,                       // 長押しで変更するレイヤー
     MOUSE, BALL_SETTINGS, LIGHT_SETTINGS // 自動マウスレイヤー切り替えや設定用のレイヤー
 };
 
@@ -899,26 +929,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
         // 左手
         // 天面スイッチ
-        KC_ESC,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
-        KC_TAB,  KC_Y,  KC_P, KC_O,  KC_U,  KC_J,
-        CMD_CTL, KC_I,  KC_N, KC_E,  KC_A,  KC_SCLN,
+        KC_NO,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
+        KC_NO,  KC_Y,  KC_P, KC_O,  KC_U,  KC_J,
+        KC_NO, KC_I,  KC_N, KC_E,  KC_A,  KC_SCLN,
                  KC_Q,  KC_Z, KC_COMM, KC_DOT, KC_SLSH,
                                KC_RIGHT_ALT,
         // 側面スイッチ
-        KC_LNG2, KC_SPC,
+        C_S_T(KC_QUOT), LT(ICHIKAWA,KC_BSPC),
         // 十字キーorジョイスティック                // ジョイスティックスイッチ
         KC_UP, KC_DOWN, KC_LEFT, KC_RIGHT,         L_CHMOD,
         // 追加スイッチ                             // トグルスイッチ
-        KC_MS_BTN2, KC_MS_BTN1,                    KM_TOGGLE_SWITCH_LEFT,
+        LSFT_T(KC_SPC), LT(NUM,KC_LNG2),                    KM_TOGGLE_SWITCH_LEFT,
         // 右手
-        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, KC_BSPC,
-        KC_K, KC_D, KC_L, KC_C,  KC_W, KC_ENT,
-        KC_M, KC_H, KC_T, KC_S,  KC_R, KC_RSFT,
+        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, KC_NO,
+        KC_K, KC_D, KC_L, KC_C,  KC_W, KC_NO,
+        KC_M, KC_H, KC_T, KC_S,  KC_R, KC_NO,
         KC_B, KC_F, KC_G, KC_V,  KC_X,
                              KC_RIGHT_GUI,
-        KC_SPACE, KC_LNG1,
+        LALT_T(KC_TAB), IK_GUI,
         KC_UP, KC_DOWN, KC_LEFT, KC_RIGHT,         R_CHMOD,
-        KC_MS_BTN1, KC_MS_BTN2,                    KM_TOGGLE_SWITCH_RIGHT
+        LT(SYMBOL,KC_LNG1), LCTL_T(KC_ENT),                    KM_TOGGLE_SWITCH_RIGHT
     ),
   [SHINGETA] = LAYOUT(
         // 左手
@@ -992,26 +1022,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_UP, KC_DOWN, KC_LEFT, KC_RIGHT,         R_CHMOD,
         KC_RIGHT_ALT, KC_RIGHT_GUI,                    _______
     ),
-    [NUM] = LAYOUT(
-        // 左手
-        KC_NO,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
-        KC_NO, KC_F7, KC_F4, KC_F1, KC_F10, KC_F13,
-        KC_NO, KC_F8, KC_F5, KC_F2, KC_F11, KC_BSPC,
-                 KC_F9, KC_F6, KC_F3, KC_F12, KC_ENT,
-                          KC_RIGHT_ALT,
-        KC_NO, KC_NO,
-        KC_UP, KC_DOWN, KC_LEFT, KC_RIGHT,         L_CHMOD,
-        KC_NO, KC_NO,                    KM_TOGGLE_SWITCH_LEFT,
-        // 右手
-        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, KC_NO,
-        KC_MINS,       KC_7, KC_8, KC_9, KC_SLSH , KC_NO,
-        LSFT(KC_SCLN), KC_4, KC_5, KC_6, KC_0    , KC_NO,
-        LSFT(KC_QUOT), KC_1, KC_2, KC_3, KC_INT1  ,
-                                   KC_RIGHT_GUI,
-        KC_NO, KC_NO,
-        KC_UP, KC_DOWN, KC_LEFT, KC_RIGHT,         R_CHMOD,
-        KC_NO, KC_NO,                    KM_TOGGLE_SWITCH_RIGHT
-    ),
     [SYMBOL] = LAYOUT(
         // 左手
         _______, _______, _______, _______, _______, _______,
@@ -1019,24 +1029,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, LSFT(KC_7), LSFT(KC_2), KC_MINS, LSFT(KC_1), KC_ESC,
                  LSFT(KC_3), LSFT(KC_5), LSFT(KC_INT1), LSFT(KC_MINS), KC_LBRC,
                           _______,
-        _______, _______,
+        C_S_T(KC_QUOT), LCTL_T(KC_BSPC),
         _______, _______, _______, _______,          _______,
-        _______, _______,                            _______,
+        LSFT_T(KC_SPC), LALT_T(KC_LNG2),                    _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
         KC_PGUP, KC_HOME,             KC_END,       LSFT(KC_RBRC), LSFT(KC_NUHS), _______,
         LSFT(KC_QUOT), LSFT(KC_INT3), LSFT(KC_EQL), KC_EQL,        LSFT(KC_4),       _______,
         KC_PGDN, KC_DEL,              KC_RBRC,      KC_NUHS,       LSFT(KC_LBRC),
                                    _______,
-        _______, _______,
-        _______, _______, _______, _______,          _______,
-        _______, _______,                            _______
+        LALT_T(KC_TAB), IK_GUI,
+        _______, _______, _______, _______,         _______,
+        LT(SYMBOL,KC_LNG1), LCTL_T(KC_ENT),                    _______
+    ),
+    [NUM] = LAYOUT(
+        // 左手
+        _______, _______,  _______, _______, _______, _______,
+        _______, KC_F7, KC_F4, KC_F1, KC_F10, KC_F13,
+        _______, KC_F8, KC_F5, KC_F2, KC_F11, KC_BSPC,
+                 KC_F9, KC_F6, KC_F3, KC_F12, KC_ENT,
+                          _______,
+        C_S_T(KC_QUOT), LT(ICHIKAWA,KC_BSPC),
+        _______, _______, _______, _______,         _______,
+        LSFT_T(KC_SPC), LT(NUM,KC_LNG2),            _______,
+        // 右手
+        _______, _______, _______, _______, _______, _______,
+        KC_MINS,       KC_7, KC_8, KC_9, KC_SLSH , _______,
+        LSFT(KC_SCLN), KC_4, KC_5, KC_6, KC_0    , _______,
+        LSFT(KC_QUOT), KC_1, KC_2, KC_3, KC_INT1  ,
+                                   _______,
+        LALT_T(KC_TAB), IK_GUI,
+        _______, _______, _______, _______,         _______,
+        KC_LEFT_SHIFT, LCTL_T(KC_ENT),         _______
     ),
     [ICHIKAWA] = LAYOUT(
         // 左手
         _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,
-        _______, KC_L, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,
                  _______, _______, _______, _______, _______,
                           _______,
         _______, _______,
