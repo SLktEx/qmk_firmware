@@ -2,10 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
+#include "quantum.h"
 
 // 追加するキーコード
 enum SG_keycodes{
-    SG_ぁ = SAFE_RANGE,
+    SG_ぁ = QK_USER_31 + 1,
     SG_あ,
     SG_ぃ,
     SG_い,
