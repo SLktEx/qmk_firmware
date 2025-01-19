@@ -137,6 +137,7 @@ enum SG_keycodes{
     SG_りょ,
     SG_COMM,
     SG_DOT,
+    SG_TOGGLE,
 };
 
-bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record);
+bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record, uint8_t layer);

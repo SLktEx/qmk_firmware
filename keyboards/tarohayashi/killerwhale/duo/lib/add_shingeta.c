@@ -1,8 +1,9 @@
 #include "quantum.h"
 #include "lib/add_shingeta.h"
 
+bool ime_on = true;
 
-bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record){
+bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record, uint8_t layer){
     switch (keycode) {
         case SG_い:
             if(record->event.pressed) {
@@ -139,6 +140,11 @@ bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record){
                 SEND_STRING("nn");
             }
             break;
+        case SG_げ:
+            if(record->event.pressed) {
+                SEND_STRING("ge");
+            }
+            break;
         case SG_COMM:
             if(record->event.pressed) {
                 register_code(KC_COMM);
@@ -152,6 +158,31 @@ bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record){
             }else {
                 unregister_code(KC_DOT);
             }
+            break;
+        // IMEとうまく連携できないとき用
+        case SG_TOGGLE:
+            if(ime_on) {
+                layer_on(layer);
+                ime_on = false;
+            }else {
+                layer_off(layer);
+                ime_on = true;
+            }
+            break;
+        // 全角半角対応
+        // PCと日本語英語がずれたらSG_TOGGLEで変更してもろて
+        case KC_LANGUAGE_5:
+            if(record->event.pressed) {
+                layer_on(layer);
+            } else {
+                layer_off(layer);
+            }
+        // 新下駄配列のON/OFF
+        case KC_LNG1:
+            layer_on(layer);
+            break;
+        case KC_LNG2:
+            layer_off(layer);
             break;
     }
     return true;

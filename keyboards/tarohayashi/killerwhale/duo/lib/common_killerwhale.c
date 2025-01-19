@@ -83,7 +83,6 @@ bool is_mouse_record_kb(uint16_t keycode, keyrecord_t* record) {
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
     // 追加キーコードタスク
     process_record_addedkeycodes(keycode, record);
-    process_record_shingetakeycodes(keycode, record);
     // D-Padの同時押しを防ぐ
     keypos_t key = record->event.key;
     if(key.col == 6 && dpad_exclusion){

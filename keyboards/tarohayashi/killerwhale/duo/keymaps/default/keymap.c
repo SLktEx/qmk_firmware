@@ -1092,10 +1092,10 @@ void layer_on_qwerty_when_modifier(keyrecord_t *record) {
     } else {
         layer_off(QWERTY);
     }
-
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record){
+    process_record_shingetakeycodes(keycode, record,SHINGETA);
 
     switch (keycode) {
         case KC_LEFT_CTRL:
@@ -1125,9 +1125,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
             if ( BASE != get_highest_layer(layer_state)) {
                 layer_on_qwerty_when_modifier(record);
             }
-            break;
-        case KC_ESC:
-            layer_on(SHINGETA);
             break;
     }
 
