@@ -75,8 +75,6 @@
 
 
 
-
-
 /* ハードウェア設定（変更不要） */
 // SPI SETTINGS
 #define PMW33XX_CS_PIN  GP0
@@ -105,3 +103,5 @@
 // JOYSTICK
 #define JOYSTICK_AXIS_COUNT 2
 #define JOYSTICK_AXIS_RESOLUTION 10
+
+#define EXTRA_EXTRA_LONG_COMBOS

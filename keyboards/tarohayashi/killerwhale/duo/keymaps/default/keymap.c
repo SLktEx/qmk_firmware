@@ -1347,41 +1347,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
           break;
         case KM_ICHIKAWA_ENT:
           if (record->event.pressed) {
-            startup_timer = timer_read();
             register_code(KC_LEFT_CTRL);
+            register_code(KC_ENT);
           } else {
-            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
-              tap_code(KC_ENT);
-            }
+            unregister_code(KC_ENT);
             unregister_code(KC_LEFT_CTRL);
           }
           break;
         case KM_ICHIKAWA_GUI:
           if (record->event.pressed) {
-            startup_timer = timer_read();
             register_code(KC_LEFT_CTRL);
-            register_code(KC_LEFT_SHIFT);
+            register_code(KC_LEFT_GUI);
           } else {
+            unregister_code(KC_LEFT_GUI);
             unregister_code(KC_LEFT_CTRL);
-            unregister_code(KC_LEFT_SHIFT);
-            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
-              register_code(KC_LEFT_CTRL);
-              tap_code(KC_LEFT_GUI);
-              unregister_code(KC_LEFT_CTRL);
-            }
           }
           break;
         case KM_ICHIKAWA_TAB:
           if (record->event.pressed) {
-            startup_timer = timer_read();
-            register_code(KC_LEFT_ALT);
-          } else {
-            unregister_code(KC_LEFT_ALT);
-            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
               register_code(KC_LEFT_CTRL);
-              tap_code(KC_TAB);
+              register_code(KC_TAB);
+          } else {
+              unregister_code(KC_TAB);
               unregister_code(KC_LEFT_CTRL);
-            }
           }
           break;
         case KM_NUM_ENT:
