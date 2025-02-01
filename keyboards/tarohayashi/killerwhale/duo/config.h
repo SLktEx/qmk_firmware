@@ -14,7 +14,7 @@
 // 入力モードデフォルト
 // KEY_INPUT / CURSOR_MODE / SCROLL_MODE
 #define MODE_DEFAULT_LEFT KEY_INPUT
-#define MODE_DEFAULT_RIGHT KEY_INPUT
+#define MODE_DEFAULT_RIGHT CURSOR_MODE
 
 // CPI = 400 + spd * 200 / AMP = 16.0 + (double)spd * 3.0
 #define SPD_OPTION_MAX    7 // 固定: 最大値
@@ -42,10 +42,10 @@
 // オートマウスの設定
 #define AUTO_MOUSE_DEFAULT true     // デフォルトのオン/オフ
 #define AUTO_MOUSE_DEFAULT_LAYER 7  // 使用レイヤー
-#define AUTO_MOUSE_THRESHOLD 80     // オートマウスが反応する移動量
-#define AUTO_MOUSE_TIME  750        // レイヤー切り替え時間
-#define AUTO_MOUSE_DEBOUNCE 40      // 再度オートマウスさせるまでの時間
-#define AUTO_MOUSE_DELAY 750        // 一般ボタン使用時のオートマウスオフ時間
+#define AUTO_MOUSE_THRESHOLD 10     // オートマウスが反応する移動量
+#define AUTO_MOUSE_TIME  500        // レイヤー切り替え時間
+#define AUTO_MOUSE_DEBOUNCE 25      // 再度オートマウスさせるまでの時間
+#define AUTO_MOUSE_DELAY 200        // 一般ボタン使用時のオートマウスオフ時間
 
 // ジョイスティク用定数
 #define NO_JOYSTICK_VAL 100         // JSの有無判定閾値

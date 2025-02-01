@@ -1120,19 +1120,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MOUSE] = LAYOUT(
         // 左手
         _______, _______, _______, _______, _______,    _______,
-        _______, _______, _______, _______, _______,    _______,
-        _______, _______, _______, KC_MS_BTN2, KC_MS_BTN1, MOD_SCRL,
-                 QK_USER_4, _______, _______, _______, _______,
-                          MOD_SCRL,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,
+        _______, KC_LEFT_GUI, KC_LEFT_ALT, KC_LEFT_CTRL, KC_LEFT_SHIFT, XXXXXXX,
+                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                          XXXXXXX,
         _______, _______,
         _______, _______, _______, _______,          _______,
         _______, _______,                            _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        MOD_SCRL, KC_MS_BTN1, KC_MS_BTN2, _______, _______, _______,
-        _______, _______, _______, _______, QK_USER_4,
-                                   MOD_SCRL,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, KC_MS_BTN1, KC_MS_BTN2, MOD_SCRL, QK_USER_4, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                   XXXXXXX,
         _______, _______,
         _______, _______, _______, _______,          _______,
         _______, _______,                            _______
