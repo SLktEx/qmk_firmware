@@ -8,6 +8,9 @@
 // 追加するキーコード
 enum IK_keycodes{
     IK_GUI = SG_LAST,
+    IK_END,
+    IK_MAX,
+    IK_MIN,
     IK_LAST
 };
 

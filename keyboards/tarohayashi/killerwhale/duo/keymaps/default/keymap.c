@@ -964,9 +964,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
         // 左手
         // 天面スイッチ
-        KC_NO,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
-        KC_NO,  KC_Y,  KC_P, KC_O,  KC_U,  KC_J,
-        KC_NO, KC_I,  KC_N, KC_E,  KC_A,  KC_SCLN,
+        XXXXXXX,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
+        XXXXXXX,  KC_Y,  KC_P, KC_O,  KC_U,  KC_J,
+        XXXXXXX, KC_I,  KC_N, KC_E,  KC_A,  KC_SCLN,
                  KC_Q,  KC_Z, KC_COMM, KC_DOT, KC_SLSH,
                                KC_RIGHT_ALT,
         // 側面スイッチ
@@ -976,9 +976,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 追加スイッチ                             // トグルスイッチ
         LSFT_T(KC_SPC), LT(NUM,KC_LNG2),                    KM_TOGGLE_SWITCH_LEFT,
         // 右手
-        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, KC_NO,
-        KC_K, KC_D, KC_L, KC_C,  KC_W, KC_NO,
-        KC_M, KC_H, KC_T, KC_S,  KC_R, KC_NO,
+        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, XXXXXXX,
+        KC_K, KC_D, KC_L, KC_C,  KC_W, XXXXXXX,
+        KC_M, KC_H, KC_T, KC_S,  KC_R, XXXXXXX,
         KC_B, KC_F, KC_G, KC_V,  KC_X,
                              KC_RIGHT_GUI,
         LALT_T(KC_TAB), IK_GUI,
@@ -1100,18 +1100,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [ICHIKAWA] = LAYOUT(
         // 左手
         _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-                 _______, _______, _______, _______, _______,
+        _______, KC_VOLU, IK_END,   IK_MIN,  IK_MAX,       XXXXXXX,
+        _______, KC_MUTE, XXXXXXX,  LGUI(LALT(KC_LEFT)), LGUI(LALT(KC_RIGHT)), CAPTCHA,
+                 KC_VOLD, XXXXXXX,  XXXXXXX, LGUI(KC_TAB),      XXXXXXX,
                           _______,
         _______, _______,
         _______, _______, _______, _______,          _______,
         _______, _______,                            _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+        XXXXXXX, KC_MS_BTN1, KC_MS_BTN2, MOD_SCRL, XXXXXXX, _______,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                    _______,
         KM_ICHIKAWA_TAB, KM_ICHIKAWA_GUI,
         _______, _______, _______, _______,          _______,
