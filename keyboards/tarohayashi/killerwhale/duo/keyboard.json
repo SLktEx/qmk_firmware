@@ -81,7 +81,7 @@
     "sleep": false,
     "layers": {
       "enabled": true,
-      "max": 6
+      "max": 10
     }
   },
   "ws2812": {
