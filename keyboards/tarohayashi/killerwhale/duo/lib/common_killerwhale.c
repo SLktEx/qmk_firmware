@@ -11,15 +11,25 @@
 #include "lib/add_shingeta.h"
 
 bool is_symbol = false;
+bool is_ctrl = false;
 
-void ctrl_shift_on_joystick(bool is_symbol) {
-    if (is_symbol) {
-        register_code(KC_LEFT_CTRL);
-        register_code(KC_LEFT_SHIFT);
-    }
-    if (!is_symbol) {
-        unregister_code(KC_LEFT_CTRL);
-        unregister_code(KC_LEFT_SHIFT);
+void modifier_on_joystick(bool pressed) {
+    if (pressed) {
+        if (is_symbol) {
+            register_code(KC_LEFT_CTRL);
+            register_code(KC_LEFT_SHIFT);
+        }
+        if (is_ctrl) {
+            register_code(KC_LEFT_CTRL);
+        }
+    }else {
+        if (!is_symbol) {
+            unregister_code(KC_LEFT_SHIFT);
+            unregister_code(KC_LEFT_CTRL);
+        }
+        if (!is_ctrl) {
+            unregister_code(KC_LEFT_CTRL);
+        }
     }
 }
 
@@ -95,6 +105,13 @@ bool is_mouse_record_kb(uint16_t keycode, keyrecord_t* record) {
 }
 // 実タスク
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
+    if (LCTL_T(KC_ENT) == keycode) {
+        if (record->event.pressed) {
+            is_ctrl = true;
+        } else {
+            is_ctrl = false;
+        }
+    }
     // 追加キーコードタスク
     process_record_addedkeycodes(keycode, record);
     // D-Padの同時押しを防ぐ
@@ -311,59 +328,59 @@ report_mouse_t pointing_device_key_input(bool is_left, float x_rev, float y_rev)
         if(joystick_attached == JOYSTICK_LEFT){
             if(!pressed_left_l && (int16_t)x_rev > KEY_OFFSET){
                 pressed_left_l = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_right_l);
             }else if(pressed_left_l && (int16_t)x_rev  < KEY_OFFSET){
                 pressed_left_l = false;
                 unregister_code(keycode_right_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if(!pressed_right_l && (int16_t)x_rev  < -KEY_OFFSET){
                 pressed_right_l = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_left_l);
             }else if (pressed_right_l && (int16_t)x_rev  > -KEY_OFFSET){
                 pressed_right_l = false;
                 unregister_code(keycode_left_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
 
             if(!pressed_up_l && (int16_t)y_rev > KEY_OFFSET){
                 pressed_up_l = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_down_l);
             }else if(pressed_up_l && (int16_t)y_rev < KEY_OFFSET){
                 pressed_up_l = false;
                 unregister_code(keycode_down_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if(!pressed_down_l && (int16_t)y_rev < -KEY_OFFSET){
                 pressed_down_l = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_up_l);
             }else if(pressed_down_l && (int16_t)y_rev > -KEY_OFFSET){
                 pressed_down_l = false;
                 unregister_code(keycode_up_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
         // トラックボール時は単入力を一定時間間隔
         }else if(timer_elapsed(key_timer_l) > TIMEOUT_KEY){
             if((int16_t)x_rev > KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_right_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if((int16_t)x_rev  < -KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_left_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
 
             if((int16_t)y_rev > KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_down_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if((int16_t)y_rev < -KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_up_l);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
 
             key_timer_l = timer_read();
@@ -380,59 +397,59 @@ report_mouse_t pointing_device_key_input(bool is_left, float x_rev, float y_rev)
         if(joystick_attached == JOYSTICK_RIGHT){
             if(!pressed_left_r && (int16_t)x_rev > KEY_OFFSET){
                 pressed_left_r = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_right_r);
             }else if(pressed_left_r && (int16_t)x_rev < KEY_OFFSET){
                 pressed_left_r = false;
                 unregister_code(keycode_right_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if(!pressed_right_r && (int16_t)x_rev < -KEY_OFFSET){
                 pressed_right_r = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_left_r);
             }else if (pressed_right_r && (int16_t)x_rev > -KEY_OFFSET){
                 pressed_right_r = false;
                 unregister_code(keycode_left_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
 
             if(!pressed_up_r && (int16_t)y_rev > KEY_OFFSET){
                 pressed_up_r = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_down_r);
             }else if(pressed_up_r && (int16_t)y_rev < KEY_OFFSET){
                 pressed_up_r = false;
                 unregister_code(keycode_down_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if(!pressed_down_r && (int16_t)y_rev < -KEY_OFFSET){
                 pressed_down_r = true;
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 register_code(keycode_up_r);
             }else if(pressed_down_r && (int16_t)y_rev > -KEY_OFFSET){
                 pressed_down_r = false;
                 unregister_code(keycode_up_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
         // トラックボール時は単入力を一定時間間隔
         }else if(timer_elapsed(key_timer_r) > TIMEOUT_KEY){
             if((int16_t)x_rev > KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_right_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if((int16_t)x_rev  < -KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_left_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
 
             if((int16_t)y_rev > KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_down_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }else if((int16_t)y_rev < -KEY_OFFSET){
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(true);
                 tap_code16(keycode_up_r);
-                ctrl_shift_on_joystick(is_symbol);
+                modifier_on_joystick(false);
             }
 
             key_timer_r = timer_read();
