@@ -964,9 +964,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
         // 左手
         // 天面スイッチ
-        XXXXXXX,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
-        XXXXXXX,  KC_Y,  KC_P, KC_O,  KC_U,  KC_J,
-        XXXXXXX, KC_I,  KC_N, KC_E,  KC_A,  KC_SCLN,
+        KC_RIGHT_ALT,  KC_1,  KC_2, KC_3, LT(BALL_SETTINGS, KC_4), LT(LIGHT_SETTINGS, KC_5),
+        KC_RIGHT_SHIFT,  KC_Y,  KC_P, KC_O,  KC_U,  KC_J,
+        KC_RIGHT_CTRL, KC_I,  KC_N, KC_E,  KC_A,  KC_SCLN,
                  KC_Q,  KC_Z, KC_COMM, KC_DOT, KC_SLSH,
                                KC_RIGHT_ALT,
         // 側面スイッチ
@@ -976,9 +976,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 追加スイッチ                             // トグルスイッチ
         LSFT_T(KC_SPC), LT(NUM,KC_LNG2),                    KM_TOGGLE_SWITCH_LEFT,
         // 右手
-        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, XXXXXXX,
-        KC_K, KC_D, KC_L, KC_C,  KC_W, XXXXXXX,
-        KC_M, KC_H, KC_T, KC_S,  KC_R, XXXXXXX,
+        LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, KC_RIGHT_GUI,
+        KC_K, KC_D, KC_L, KC_C,  KC_W, KC_LNUM,
+        KC_M, KC_H, KC_T, KC_S,  KC_R, KC_LCAP,
         KC_B, KC_F, KC_G, KC_V,  KC_X,
                              KC_RIGHT_GUI,
         LALT_T(KC_TAB), IK_GUI,
