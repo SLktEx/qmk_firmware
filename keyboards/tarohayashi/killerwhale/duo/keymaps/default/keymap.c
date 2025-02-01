@@ -1220,6 +1220,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
         case IK_GUI:
             layer_on_qwerty_when_modifier(record);
             break;
+        case LCTL_T(KC_ENT):
+        case LALT_T(KC_TAB):
+        case C_S_T(KC_QUOT):
+            layer_on_qwerty_when_modifier(record);
+            break;
         case KC_LEFT_CTRL:
             layer_on_qwerty_when_modifier(record);
             break;
