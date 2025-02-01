@@ -977,8 +977,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LSFT_T(KC_SPC), LT(NUM,KC_LNG2),                    KM_TOGGLE_SWITCH_LEFT,
         // 右手
         LT(LIGHT_SETTINGS, KC_6), LT(BALL_SETTINGS, KC_7), KC_8, KC_9, KC_0, KC_RIGHT_GUI,
-        KC_K, KC_D, KC_L, KC_C,  KC_W, KC_LNUM,
-        KC_M, KC_H, KC_T, KC_S,  KC_R, KC_LCAP,
+        KC_K, KC_D, KC_L, KC_C,  KC_W, KC_RIGHT_SHIFT,
+        KC_M, KC_H, KC_T, KC_S,  KC_R, KC_RIGHT_CTRL,
         KC_B, KC_F, KC_G, KC_V,  KC_X,
                              KC_RIGHT_GUI,
         LALT_T(KC_TAB), IK_GUI,
@@ -1139,8 +1139,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [BALL_SETTINGS] = LAYOUT(
         // 左手
-        XXXXXXX,    XXXXXXX, XXXXXXX, QK_USER_14, _______, L_CHMOD,
-        XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, L_SPD_I, XXXXXXX,
+        KC_LNUM,    XXXXXXX, XXXXXXX, QK_USER_14, _______, L_CHMOD,
+        KC_LCAP,    XXXXXXX, XXXXXXX, XXXXXXX, L_SPD_I, XXXXXXX,
         AUTO_MOUSE, XXXXXXX, XXXXXXX, L_ANG_D, L_INV,   L_ANG_I,
                     XXXXXXX, XXXXXXX,XXXXXXX, L_SPD_D, XXXXXXX,
                              INV_SCRL,
