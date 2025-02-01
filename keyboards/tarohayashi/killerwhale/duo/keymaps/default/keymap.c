@@ -145,10 +145,6 @@ enum combo_events {
     C_SG_を,
     C_SG_ヴ,
 
-    // utils
-    Symbol_QUOT,
-    QUOT_Shift,
-
     // win -> ctrl + shift
     QUOT_Ctrl_Shift,
     BSPC_Ctrl_Shift,
@@ -263,10 +259,8 @@ const uint16_t PROGMEM C_SG_ゎ_COMBO[] = {SG_ひ, SG_は, COMBO_END};
 const uint16_t PROGMEM C_SG_わ_COMBO[] = {SG_て, SG_と, COMBO_END};
 const uint16_t PROGMEM C_SG_を_COMBO[] = {SG_し, SG_の, COMBO_END};
 const uint16_t PROGMEM C_SG_ヴ_COMBO[] = {SG_ぶ, SG_か, COMBO_END};
-// utils
-//const uint16_t PROGMEM Symbol_QUOT_COMBO[] = {LT(SYMBOL,KC_LNG3), C_S_T(KC_9), COMBO_END};
-//const uint16_t PROGMEM QUOT_Shift_COMBO[] = {LT(SYMBOL,KC_LNG1), C_S_T(KC_1), COMBO_END};
 
+// win -> ctrl + shift
 const uint16_t PROGMEM QUOT_Ctrl_Shift_COMBO[] = {IK_GUI, C_S_T(KC_QUOT), COMBO_END};
 const uint16_t PROGMEM BSPC_Ctrl_Shift_COMBO[] = {IK_GUI, LT(ICHIKAWA,KC_BSPC), COMBO_END};
 const uint16_t PROGMEM SPC_Ctrl_Shift_COMBO[] = {IK_GUI, LSFT_T(KC_SPC), COMBO_END};
@@ -381,17 +375,12 @@ combo_t key_combos[] = {
     [C_SG_を] = COMBO_ACTION(C_SG_を_COMBO),
     [C_SG_ヴ] = COMBO_ACTION(C_SG_ヴ_COMBO),
 
-    // utils
-    //[Symbol_QUOT] = COMBO_ACTION(Symbol_QUOT_COMBO),
-    //[QUOT_Shift] = COMBO_ACTION(QUOT_Shift_COMBO),
-
+    // win -> ctrl + shift
     [QUOT_Ctrl_Shift] = COMBO_ACTION(QUOT_Ctrl_Shift_COMBO),
     [BSPC_Ctrl_Shift] = COMBO_ACTION(BSPC_Ctrl_Shift_COMBO),
     [SPC_Ctrl_Shift] = COMBO_ACTION(SPC_Ctrl_Shift_COMBO),
 
-    //[QUOT_Symbol] = COMBO_ACTION(QUOT_Symbol_COMBO),
 };
-/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
@@ -931,26 +920,6 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       }
       break;
 
-    // utils
-
-    // case Symbol_QUOT:
-    //   startup_timer = timer_read();
-    //   if (pressed) {
-    //     layer_on(SYMBOL);
-    //     register_code(KC_LEFT_SHIFT);
-    //     register_code(KC_LEFT_CTRL);
-    //   } else {
-    //     layer_off(SYMBOL);
-    //     unregister_code(KC_LEFT_CTRL);
-    //     unregister_code(KC_LEFT_SHIFT);
-    //     if(timer_elapsed(startup_timer) < 50){
-    //       register_code(KC_LEFT_SHIFT);
-    //       tap_code(KC_QUOT);
-    //       unregister_code(KC_LEFT_SHIFT);
-    //     }
-    //   }
-    //   break;
-
 // win -> ctrl + shift
      case QUOT_Ctrl_Shift:
        if (pressed) {
@@ -1244,9 +1213,6 @@ void layer_on_qwerty_when_modifier(keyrecord_t *record) {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record){
-#ifdef CONSOLE_ENABLE
-    uprintf("KL: kc: %u, col: %u, row: %u, pressed: %u,test: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed,LCTL(LSFT(KC_T)));
-#endif 
     process_record_shingetakeycodes(keycode, record,SHINGETA);
     process_record_ichikawakeycodes(keycode, record, 0);
 
