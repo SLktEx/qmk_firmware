@@ -3,6 +3,7 @@
 
 #pragma once
 #include "quantum.h"
+#include "config.h"
 
 // 追加するキーコード
 enum SG_keycodes{

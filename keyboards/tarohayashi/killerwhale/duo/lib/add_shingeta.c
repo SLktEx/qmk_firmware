@@ -1,9 +1,6 @@
 #include "quantum.h"
 #include "lib/add_shingeta.h"
 
-#define SYMBOL_LAYER 4
-#define NUM_LAYER 5
-
 bool ime_on = true;
 
 bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record, uint8_t layer){
