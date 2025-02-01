@@ -1188,7 +1188,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
         ENCODER_CCW_CW(KC_DEL, KC_BSPC),
         ENCODER_CCW_CW(KC_UP, KC_DOWN),
         ENCODER_CCW_CW(KC_WH_U, KC_WH_D),
-        ENCODER_CCW_CW(KC_WH_U, KC_WH_D),
+        ENCODER_CCW_CW(KC_WH_L, KC_WH_R),
     },
     [LIGHT_SETTINGS] =   {
         ENCODER_CCW_CW(UG_SPDU, UG_SPDD),
