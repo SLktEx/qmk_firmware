@@ -1213,7 +1213,7 @@ void layer_on_qwerty_when_modifier(keyrecord_t *record) {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record){
-    process_record_shingetakeycodes(keycode, record,SHINGETA);
+    process_record_shingetakeycodes(keycode, record, SHINGETA);
     process_record_ichikawakeycodes(keycode, record, 0);
 
     switch (keycode) {

@@ -1,6 +1,9 @@
 #include "quantum.h"
 #include "lib/add_shingeta.h"
 
+#define SYMBOL_LAYER 4
+#define NUM_LAYER 5
+
 bool ime_on = true;
 
 bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record, uint8_t layer){
@@ -184,15 +187,21 @@ bool process_record_shingetakeycodes(uint16_t keycode, keyrecord_t *record, uint
                 }
             }
         // 新下駄配列のON/OFF
-        case KC_LNG1:
-            layer_on(layer);
+        case LT(SYMBOL_LAYER,KC_LNG1):
+            if (record->tap.count && record->event.pressed) {
+                layer_on(layer);
+            }
             break;
+        case LT(NUM_LAYER,KC_LNG2):
+            if (record->tap.count && record->event.pressed) {
+                layer_off(layer);
+            }
+            break;
+        case KC_LNG1:
         case KC_INTERNATIONAL_4:
             layer_on(layer);
             break;
         case KC_LNG2:
-            layer_off(layer);
-            break;
         case KC_INTERNATIONAL_5:
             layer_off(layer);
             break;
