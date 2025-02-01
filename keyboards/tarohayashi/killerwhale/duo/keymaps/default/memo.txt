@@ -1,0 +1,120 @@
+キー一覧
+
+数字レイヤー
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+
+F1
+F2
+F3
+F4
+F5
+F6
+F7
+F8
+F9
+F10
+F11
+F12
+-> ぴったり ただ3列あまる
+
+//synbols
+
+Esc
+Delete
+HOME
+END
+Page UP
+Page DOWN
+!
+"
+#
+$
+%
+&
+'
+(
+)
+-
+=
+~
+^
+\
+|
+[
+]
+{
+}
+@
+`
+:
+*
+_
+
+//extra keys
+Backspace
+Space
+Enter
+Tab
+無変換
+変換
+:
+Win
+
+//hole
+数字
+記号
+市川
+Win
+Alt
+Control
+Shift
+Ctrl+Shift
+
+// 市川レイヤー候補
+終了
+最大化 -> できれば
+最小化 -> できれば
+最前面に配置 -> いらんかも, 適当なキーにわりあてるとか
+TAB移動 -> Ctrl + tab
+TAB移動前 -> Ctrl + Shift + tab
+
+
+// nomal
+| Q | W | E | R | T | Y | U | I | O | P |
+| A | S | D | F | G | H | J | K | L | ? |
+| Z | X | C | V | B | N | M | < | > | ? |
+
+num pad
+| F7 | F4 | F1 | F10 |  F13       | - | 7 | 8 | 9 | /     |
+| F8 | F5 | F2 | F11 |  Backspace | + | 4 | 5 | 6 | 0     |
+| F9 | F6 | F3 | F12 |  Enter     | * | 1 | 2 | 3 | F14   |
+
+synbols
+| ( | ) | : | & | \   | Page UP   | HOME   | END | { | } |
+| ' | " | - | ! | Esc | *         |   |    | ~   | ^ | $ |
+| # | % | _ | = | @   | Page DOWN | Delete | [   | ] | ` |
+
+
+tap         : | :          | Backspace | Space | MUHENKAN | | HENKAN  | Enter | Tab | Win |
+hold        : | Ctrl+Shift | ICHIKAWA  | Shift | NUM      | | Synbols | Ctrl  | Alt | Win |
+
+:           : | NO         | NO        | NO    | NO       | | Shift   | Ctrl  | Alt | Ctrl+Shift  | -> Win + : でCtrl+Shift にする。
+Backspace   : | NO         | NO        | NO    | NO       | | Shift   | Ctrl  | Alt | Ctrl+Shift  |
+Space       : | NO         | NO        | NO    | NO       | | Shift   | Ctrl  | Alt | Ctrl+Shift  |
+Enter       : | Ctrl+Shift | Ctrl      | Shift | Alt      | | NO      | NO    | NO  | NO          |
+Tab         : | Ctrl+Shift | Ctrl      | Shift | Alt      | | NO      | NO    | NO  | NO          |
+Win         : | Ctrl+Shift | Ctrl      | Shift | Alt      | | NO      | NO    | NO  | NO          |
+ICHIKAWA    : | NO         | NO        | NO    | NO       | | Shift   | Ctrl  | Alt | Ctrl+Shift  |
+NUM         : | NO         | NO        | NO    | NO       | | Shift   | Ctrl  | Alt | Ctrl+Shift  |
+Synbols     : | NO         | NO        | NO    | NO       | | Shift   | Ctrl  | Alt | Ctrl+Shift  |
+
+いらない2キーは Alt + Win
