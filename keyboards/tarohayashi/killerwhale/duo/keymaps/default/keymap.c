@@ -1101,8 +1101,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // 左手
         _______, _______, _______, _______, _______, _______,
         _______, KC_VOLU, IK_END,   IK_MIN,  IK_MAX,       XXXXXXX,
-        _______, KC_MUTE, XXXXXXX,  LGUI(LALT(KC_LEFT)), LGUI(LALT(KC_RIGHT)), CAPTCHA,
-                 KC_VOLD, XXXXXXX,  XXXXXXX, LGUI(KC_TAB),      XXXXXXX,
+        _______, KC_MUTE, KC_GRV,  LGUI(LALT(KC_LEFT)), LGUI(LALT(KC_RIGHT)), CAPTCHA,
+                 KC_VOLD, XXXXXXX,  XXXXXXX, LGUI(KC_TAB),      SG_TOGGLE,
                           _______,
         _______, _______,
         _______, _______, _______, _______,          _______,
