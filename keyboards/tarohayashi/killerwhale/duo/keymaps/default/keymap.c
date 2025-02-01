@@ -5,10 +5,32 @@
 #include "lib/add_keycodes.h"
 #include "lib/add_shingeta.h"
 #include "lib/add_ichikawa.h"
+uint16_t startup_timer;
+
+#define TAP_TERM_KEYMAP 100
 
 enum KEYMAP_keycodes{
     KM_TOGGLE_SWITCH_RIGHT = IK_LAST,
     KM_TOGGLE_SWITCH_LEFT,
+    KM_SYMBOL_QUOT,
+    KM_SYMBOL_BSPC,
+    KM_SYMBOL_SPC,
+    KM_ICHIKAWA_ENT,
+    KM_ICHIKAWA_GUI,
+    KM_ICHIKAWA_TAB,
+    KM_NUM_ENT,
+    KM_NUM_GUI,
+    KM_NUM_TAB,
+};
+
+
+// レイヤー名
+enum layer_number {
+    BASE = 0,
+    SHINGETA,
+    QWERTY, ONLY_QWERTY,                       // トグルスイッチで変更するレイヤー
+    SYMBOL, NUM, ICHIKAWA,                       // 長押しで変更するレイヤー
+    MOUSE, BALL_SETTINGS, LIGHT_SETTINGS // 自動マウスレイヤー切り替えや設定用のレイヤー
 };
 
 bool toggle_switch_right = false;
@@ -124,8 +146,14 @@ enum combo_events {
     C_SG_ヴ,
 
     // utils
+    Symbol_QUOT,
+    QUOT_Shift,
+
+    // win -> ctrl + shift
     QUOT_Ctrl_Shift,
-    QUOT_Symbol,
+    BSPC_Ctrl_Shift,
+    SPC_Ctrl_Shift,
+    LNG2_Ctrl_Shift,
 };
 
 const uint16_t PROGMEM C_SG_ぁ_COMBO[] = {SG_ぐ, SG_は, COMBO_END};
@@ -235,8 +263,13 @@ const uint16_t PROGMEM C_SG_ゎ_COMBO[] = {SG_ひ, SG_は, COMBO_END};
 const uint16_t PROGMEM C_SG_わ_COMBO[] = {SG_て, SG_と, COMBO_END};
 const uint16_t PROGMEM C_SG_を_COMBO[] = {SG_し, SG_の, COMBO_END};
 const uint16_t PROGMEM C_SG_ヴ_COMBO[] = {SG_ぶ, SG_か, COMBO_END};
-const uint16_t PROGMEM QUOT_Ctrl_Shift_COMBO = {IK_GUI, C_S_T(KC_QUOT), COMBO_END};
-const uint16_t PROGMEM QUOT_Symbol_COMBO = {LT(SYMBOL,KC_LNG1), C_S_T(KC_QUOT), COMBO_END};
+// utils
+//const uint16_t PROGMEM Symbol_QUOT_COMBO[] = {LT(SYMBOL,KC_LNG3), C_S_T(KC_9), COMBO_END};
+//const uint16_t PROGMEM QUOT_Shift_COMBO[] = {LT(SYMBOL,KC_LNG1), C_S_T(KC_1), COMBO_END};
+
+const uint16_t PROGMEM QUOT_Ctrl_Shift_COMBO[] = {IK_GUI, C_S_T(KC_QUOT), COMBO_END};
+const uint16_t PROGMEM BSPC_Ctrl_Shift_COMBO[] = {IK_GUI, LT(ICHIKAWA,KC_BSPC), COMBO_END};
+const uint16_t PROGMEM SPC_Ctrl_Shift_COMBO[] = {IK_GUI, LSFT_T(KC_SPC), COMBO_END};
 
 
 combo_t key_combos[] = {
@@ -348,8 +381,15 @@ combo_t key_combos[] = {
     [C_SG_を] = COMBO_ACTION(C_SG_を_COMBO),
     [C_SG_ヴ] = COMBO_ACTION(C_SG_ヴ_COMBO),
 
+    // utils
+    //[Symbol_QUOT] = COMBO_ACTION(Symbol_QUOT_COMBO),
+    //[QUOT_Shift] = COMBO_ACTION(QUOT_Shift_COMBO),
+
     [QUOT_Ctrl_Shift] = COMBO_ACTION(QUOT_Ctrl_Shift_COMBO),
-    [QUOT_Symbol] = COMBO_ACTION(QUOT_Symbol_COMBO),
+    [BSPC_Ctrl_Shift] = COMBO_ACTION(BSPC_Ctrl_Shift_COMBO),
+    [SPC_Ctrl_Shift] = COMBO_ACTION(SPC_Ctrl_Shift_COMBO),
+
+    //[QUOT_Symbol] = COMBO_ACTION(QUOT_Symbol_COMBO),
 };
 /* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
 
@@ -893,35 +933,61 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
     // utils
 
-    case QUOT_Ctrl_Shift:
-      if (pressed) {
-        register_code(KC_LEFT_SHIFT);
-        register_code(KC_LEFT_CTRL);
-      } else {
-        unregister_code(KC_LEFT_CTRL);
-        unregister_code(KC_LEFT_SHIFT);
-      }
-      break;
-    case QUOT_Symbol:
-      if (pressed) {
-        register_code(KC_LEFT_SHIFT);
-        register_code(KC_QUOT);
-      } else {
-        unregister_code(KC_QUOT);
-        unregister_code(KC_LEFT_SHIFT);
-      }
-      break;
+    // case Symbol_QUOT:
+    //   startup_timer = timer_read();
+    //   if (pressed) {
+    //     layer_on(SYMBOL);
+    //     register_code(KC_LEFT_SHIFT);
+    //     register_code(KC_LEFT_CTRL);
+    //   } else {
+    //     layer_off(SYMBOL);
+    //     unregister_code(KC_LEFT_CTRL);
+    //     unregister_code(KC_LEFT_SHIFT);
+    //     if(timer_elapsed(startup_timer) < 50){
+    //       register_code(KC_LEFT_SHIFT);
+    //       tap_code(KC_QUOT);
+    //       unregister_code(KC_LEFT_SHIFT);
+    //     }
+    //   }
+    //   break;
+
+// win -> ctrl + shift
+     case QUOT_Ctrl_Shift:
+       if (pressed) {
+         register_code(KC_LEFT_SHIFT);
+         register_code(KC_LEFT_CTRL);
+         register_code(KC_QUOT);
+       } else {
+         unregister_code(KC_QUOT);
+         unregister_code(KC_LEFT_CTRL);
+         unregister_code(KC_LEFT_SHIFT);
+       }
+       break;
+     case BSPC_Ctrl_Shift:
+       if (pressed) {
+         register_code(KC_LEFT_SHIFT);
+         register_code(KC_LEFT_CTRL);
+         register_code(KC_BSPC);
+       } else {
+         unregister_code(KC_BSPC);
+         unregister_code(KC_LEFT_CTRL);
+         unregister_code(KC_LEFT_SHIFT);
+       }
+       break;
+     case SPC_Ctrl_Shift:
+       if (pressed) {
+         register_code(KC_LEFT_SHIFT);
+         register_code(KC_LEFT_CTRL);
+         register_code(KC_SPC);
+       } else {
+         unregister_code(KC_SPC);
+         unregister_code(KC_LEFT_CTRL);
+         unregister_code(KC_LEFT_SHIFT);
+       }
+       break;
   }
 }
 
-// レイヤー名
-enum layer_number {
-    BASE = 0,
-    SHINGETA,
-    QWERTY, ONLY_QWERTY,                       // トグルスイッチで変更するレイヤー
-    SYMBOL, NUM, ICHIKAWA,                       // 長押しで変更するレイヤー
-    MOUSE, BALL_SETTINGS, LIGHT_SETTINGS // 自動マウスレイヤー切り替えや設定用のレイヤー
-};
 
 // キーマップの設定
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -1029,18 +1095,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, LSFT(KC_7), LSFT(KC_2), KC_MINS, LSFT(KC_1), KC_ESC,
                  LSFT(KC_3), LSFT(KC_5), LSFT(KC_INT1), LSFT(KC_MINS), KC_LBRC,
                           _______,
-        C_S_T(KC_QUOT), LCTL_T(KC_BSPC),
+        KM_SYMBOL_QUOT, KM_SYMBOL_BSPC,
         _______, _______, _______, _______,          _______,
-        LSFT_T(KC_SPC), LALT_T(KC_LNG2),                    _______,
+        KM_SYMBOL_SPC, LALT_T(KC_LNG2),                    _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
         KC_PGUP, KC_HOME,             KC_END,       LSFT(KC_RBRC), LSFT(KC_NUHS), _______,
         LSFT(KC_QUOT), LSFT(KC_INT3), LSFT(KC_EQL), KC_EQL,        LSFT(KC_4),       _______,
         KC_PGDN, KC_DEL,              KC_RBRC,      KC_NUHS,       LSFT(KC_LBRC),
                                    _______,
-        LALT_T(KC_TAB), IK_GUI,
+        _______, _______,
         _______, _______, _______, _______,         _______,
-        LT(SYMBOL,KC_LNG1), LCTL_T(KC_ENT),                    _______
+        _______, _______,                    _______
     ),
     [NUM] = LAYOUT(
         // 左手
@@ -1049,18 +1115,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_F8, KC_F5, KC_F2, KC_F11, KC_BSPC,
                  KC_F9, KC_F6, KC_F3, KC_F12, KC_ENT,
                           _______,
-        C_S_T(KC_QUOT), LT(ICHIKAWA,KC_BSPC),
+        _______, _______,
         _______, _______, _______, _______,         _______,
-        LSFT_T(KC_SPC), LT(NUM,KC_LNG2),            _______,
+        _______, _______,            _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
         KC_MINS,       KC_7, KC_8, KC_9, KC_SLSH , _______,
         LSFT(KC_SCLN), KC_4, KC_5, KC_6, KC_0    , _______,
         LSFT(KC_QUOT), KC_1, KC_2, KC_3, KC_INT1  ,
                                    _______,
-        LALT_T(KC_TAB), IK_GUI,
+        KM_NUM_TAB, KM_NUM_GUI,
         _______, _______, _______, _______,         _______,
-        KC_LEFT_SHIFT, LCTL_T(KC_ENT),         _______
+        LSFT_T(KC_LNG1), KM_NUM_ENT,         _______
     ),
     [ICHIKAWA] = LAYOUT(
         // 左手
@@ -1078,9 +1144,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______,
                                    _______,
-        _______, _______,
+        KM_ICHIKAWA_TAB, KM_ICHIKAWA_GUI,
         _______, _______, _______, _______,          _______,
-        _______, _______,                            _______
+        LSFT_T(KC_LNG1), KM_ICHIKAWA_ENT,         _______
     ),
     [MOUSE] = LAYOUT(
         // 左手
@@ -1178,6 +1244,9 @@ void layer_on_qwerty_when_modifier(keyrecord_t *record) {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record){
+#ifdef CONSOLE_ENABLE
+    uprintf("KL: kc: %u, col: %u, row: %u, pressed: %u,test: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed,LCTL(LSFT(KC_T)));
+#endif 
     process_record_shingetakeycodes(keycode, record,SHINGETA);
     process_record_ichikawakeycodes(keycode, record, 0);
 
@@ -1237,6 +1306,123 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
                 layer_off(ONLY_QWERTY);
             }
             break;
+        case KM_SYMBOL_QUOT:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_SHIFT);
+            register_code(KC_LEFT_CTRL);
+          } else {
+            unregister_code(KC_LEFT_CTRL);
+            unregister_code(KC_LEFT_SHIFT);
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              register_code(KC_LEFT_SHIFT);
+              tap_code(KC_QUOT);
+              unregister_code(KC_LEFT_SHIFT);
+            }
+          }
+          break;
+        case KM_SYMBOL_BSPC:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_CTRL);
+          } else {
+            unregister_code(KC_LEFT_CTRL);
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              register_code(KC_LEFT_SHIFT);
+              tap_code(KC_BSPC);
+              unregister_code(KC_LEFT_SHIFT);
+            }
+          }
+          break;
+        case KM_SYMBOL_SPC:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_SHIFT);
+          } else {
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              tap_code(KC_SPC);
+            }
+            unregister_code(KC_LEFT_SHIFT);
+          }
+          break;
+        case KM_ICHIKAWA_ENT:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_CTRL);
+          } else {
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              tap_code(KC_ENT);
+            }
+            unregister_code(KC_LEFT_CTRL);
+          }
+          break;
+        case KM_ICHIKAWA_GUI:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_CTRL);
+            register_code(KC_LEFT_SHIFT);
+          } else {
+            unregister_code(KC_LEFT_CTRL);
+            unregister_code(KC_LEFT_SHIFT);
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              register_code(KC_LEFT_CTRL);
+              tap_code(KC_LEFT_GUI);
+              unregister_code(KC_LEFT_CTRL);
+            }
+          }
+          break;
+        case KM_ICHIKAWA_TAB:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_ALT);
+          } else {
+            unregister_code(KC_LEFT_ALT);
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              register_code(KC_LEFT_CTRL);
+              tap_code(KC_TAB);
+              unregister_code(KC_LEFT_CTRL);
+            }
+          }
+          break;
+        case KM_NUM_ENT:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_CTRL);
+          } else {
+            unregister_code(KC_LEFT_CTRL);
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              register_code(KC_LEFT_ALT);
+              tap_code(KC_ENT);
+              unregister_code(KC_LEFT_ALT);
+            }
+          }
+          break;
+        case KM_NUM_GUI:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_CTRL);
+            register_code(KC_LEFT_SHIFT);
+          } else {
+            unregister_code(KC_LEFT_SHIFT);
+            unregister_code(KC_LEFT_CTRL);
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              register_code(KC_LEFT_ALT);
+              tap_code(KC_LEFT_GUI);
+              unregister_code(KC_LEFT_ALT);
+            }
+          }
+          break;
+        case KM_NUM_TAB:
+          if (record->event.pressed) {
+            startup_timer = timer_read();
+            register_code(KC_LEFT_ALT);
+          } else {
+            if(timer_elapsed(startup_timer) < TAP_TERM_KEYMAP){
+              tap_code(KC_TAB);
+            }
+            unregister_code(KC_LEFT_ALT);
+          }
+          break;
     }
 
     return true;
