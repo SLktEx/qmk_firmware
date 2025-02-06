@@ -5,6 +5,8 @@
 #include "lib/add_keycodes.h"
 #include "lib/add_shingeta.h"
 #include "lib/add_ichikawa.h"
+#include "lib/common_killerwhale.h"
+#include "lib/add_oled.h"
 uint16_t startup_timer;
 
 #define TAP_TERM_KEYMAP 100
@@ -21,6 +23,7 @@ enum KEYMAP_keycodes{
     KM_NUM_ENT,
     KM_NUM_GUI,
     KM_NUM_TAB,
+    KM_MOUSE_CTRL_SCRL,
 };
 
 
@@ -1124,14 +1127,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_LEFT_GUI, KC_LEFT_ALT, KC_LEFT_CTRL, KC_LEFT_SHIFT, XXXXXXX,
                  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                           XXXXXXX,
-        _______, _______,
+        _______, KC_LEFT_CTRL,
         _______, _______, _______, _______,          _______,
         _______, _______,                            _______,
         // 右手
         _______, _______, _______, _______, _______, _______,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, KC_MS_BTN1, KC_MS_BTN2, MOD_SCRL, QK_USER_4, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        CLOSETAB,           LALT(KC_LEFT), LALT(KC_RIGHT), KC_BSPC,  LGUI(KC_TAB),  SC_RESET,
+        KM_MOUSE_CTRL_SCRL, KC_MS_BTN1,    KC_MS_BTN2,     MOD_SCRL, QK_USER_4, CAPTCHA,
+        RSTRTAB,            PREVTAB,       NEXTTAB,        KC_DEL,   KC_ENT,
                                    XXXXXXX,
         _______, _______,
         _______, _______, _______, _______,          _______,
@@ -1380,6 +1383,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
               tap_code(KC_TAB);
             }
             unregister_code(KC_LEFT_ALT);
+          }
+          break;
+        case KM_MOUSE_CTRL_SCRL:
+            is_scroll_mode(record->event.pressed);
+            oled_tempch(record->event.pressed, MOD_SCRL);
+          if (record->event.pressed) {
+            register_code(KC_LEFT_CTRL);
+          } else {
+            unregister_code(KC_LEFT_CTRL);
           }
           break;
     }
