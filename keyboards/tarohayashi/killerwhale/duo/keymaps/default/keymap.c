@@ -1399,3 +1399,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record){
     return true;
 };
 
+bool is_mouse_record_user(uint16_t keycode, keyrecord_t* record) {
+    switch(keycode) {
+        case KM_MOUSE_CTRL_SCRL:
+            return true;
+        default:
+            return false;
+    }
+}

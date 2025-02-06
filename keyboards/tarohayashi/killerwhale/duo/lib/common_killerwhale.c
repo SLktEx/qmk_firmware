@@ -97,8 +97,6 @@ bool is_mouse_record_kb(uint16_t keycode, keyrecord_t* record) {
             return true;
         case QK_USER_12: // 一時的にカーソル移動
             return true;
-        default:
-            return false;
     }
 
     return  is_mouse_record_user(keycode, record);
